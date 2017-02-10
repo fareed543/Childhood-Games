@@ -16,11 +16,22 @@
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner" >
+							<!-- Section -->
 
-							<!-- Search -->
+							<!-- Menu -->
+							
+								
+								
+
+								<nav id="menu">
+									<header class="major">
+										<a href="#/"><h2>Indian Games</h2></a>	
+									</header>
+									
+									<!-- Search -->
 								<section id="search" class="alt">
 									<form method="post" ui-keypress="{13:'search($event)'}" ng-submit="search()">
-										<input ng-model="query" type="text" id="query" placeholder="Search" />
+										<input ng-model="query" type="text" id="query" placeholder="Search Games" />
 									</form>
 								</section>
 								
@@ -36,53 +47,28 @@
 										</article>
 									</div>
 								</section>
-
-							<!-- Section -->
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
+								
 									<ul>
 										<li><a href="#/">Homepage</a></li>
-										
-										<li ng-repeat="game in games"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
-									<!--<li><a href="elements.html">Elements</a></li>
 										<li>
-											<span class="opener">Submenu</span>
+											<span class="opener">Games</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li ng-repeat="game in games"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-									<li><a href="#">Amet Lacinia</a></li>-->
 									</ul>
 								</nav>
 
-							
+								
+								
+								
 								<section>
 									<header class="major">
-										<h2>Get in touch</h2>
+										<h2>Write to Us</h2>
 									</header>
-									<p>Ask for More Details, Report Us if any Mistake or Wrong medications are suggested.</p>
+									<p>Write to Us your Feedback and Sugession to Provide you better and Intresting Information</p>
 									<ul class="contact">
-										<li class="fa-envelope-o"><a>fareed543@gmail.com</a></li>
+										<li class="fa-envelope-o"><a>info@snopzer.com</a></li>
 										<li class="fa-phone">(720) 755 6743</li>
 										<li class="fa-home">Khairathabad, Hyderabad</li>
 									</ul>
@@ -90,7 +76,7 @@
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Mohammad Fareed. All rights reserved.</p>
+									<p class="copyright">&copy; Snopzer. All rights reserved.</p>
 								</footer>
 
 						</div>
