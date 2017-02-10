@@ -75,8 +75,9 @@
 				<h2>Games</h2>
 			</header>
 			<div class="posts">
+			
 				<article ng-repeat="game in games">
-					<a href="#" class="image"><img src="images/games/{{game.image}}" alt="" /></a>
+					<a href="#" class="image"><img ng-src="images/games/{{game.image}}" alt="" /></a>
 					<h3>{{game.name}}</h3>
 					<p>{{game.description}}.</p>
 					<ul class="actions">

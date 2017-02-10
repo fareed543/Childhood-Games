@@ -31,7 +31,7 @@
 									</header>
 									<div class="mini-posts">
 										<article ng-repeat="game in games | filter:query">
-											<a ui-sref="details({id:game.id})" class="image"><img src="images/games/{{game.image}}" alt="" /></a>
+											<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" /></a>
 											<p>{{game.name}}</p>
 										</article>
 									</div>
