@@ -7,92 +7,104 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-
+		
 		<!-- Wrapper -->
-			<div id="wrapper" ng-controller="homeController"  ng-controller="detailsController" >
-
-				<div ui-view> </div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner" >
-							<!-- Section -->
-
-							<!-- Menu -->
+		<div id="wrapper" ng-controller="homeController"  ng-controller="detailsController" >
+			
+			<div ui-view> </div>
+			
+			<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner" >
+					<!-- Section -->
+					
+					<!-- Menu -->
+					
+					
+					
+					
+					<nav id="menu">
+						<header class="major">
+							<a href="#/"><h2>Indian Games</h2></a>	
+						</header>
+						
+						<!-- Search -->
+						<section id="search" class="alt">
+							<form method="post" ui-keypress="{13:'search($event)'}" ng-submit="search()">
+								<input ng-model="query" type="text" id="query" placeholder="Search Games" />
+							</form>
+						</section>
+						
+						<!-- Section -->
+						<section ng-if="query">
+							<header class="major">
+								<h2>Results</h2>
+							</header>
+							<div class="mini-posts">
+								<article ng-repeat="game in games | filter:query">
+									<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" /></a>
+									<p>{{game.name}}</p>
+								</article>
+							</div>
+						</section>
+						
+						<ul>
+							<li><a href="#/">Homepage</a></li>
+							<li>
+								<span class="opener">Games</span>
+								<ul>
+									<li ng-repeat="game in games"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
+								</ul>
+							</li>
+							<li><a ui-sref="page">Vision & Mission</a></li>
 							
-								
-								
+						</ul>
+					</nav>
+					
+					
 
-								<nav id="menu">
-									<header class="major">
-										<a href="#/"><h2>Indian Games</h2></a>	
-									</header>
-									
-									<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" ui-keypress="{13:'search($event)'}" ng-submit="search()">
-										<input ng-model="query" type="text" id="query" placeholder="Search Games" />
-									</form>
-								</section>
-								
-								<!-- Section -->
-								<section ng-if="query">
-									<header class="major">
-										<h2>Results</h2>
-									</header>
-									<div class="mini-posts">
-										<article ng-repeat="game in games | filter:query">
-											<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" /></a>
-											<p>{{game.name}}</p>
-										</article>
-									</div>
-								</section>
-								
-									<ul>
-										<li><a href="#/">Homepage</a></li>
-										<li>
-											<span class="opener">Games</span>
-											<ul>
-												<li ng-repeat="game in games"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
-
-								
-								
-								
-								<section>
-									<header class="major">
-										<h2>Write to Us</h2>
-									</header>
-									<p>Write to Us your Feedback and Sugession to Provide you better and Intresting Information</p>
-									<ul class="contact">
-										<li class="fa-envelope-o"><a>info@snopzer.com</a></li>
-										<li class="fa-phone">(720) 755 6743</li>
-										<li class="fa-home">Khairathabad, Hyderabad</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Snopzer. All rights reserved.</p>
-								</footer>
-
-						</div>
-					</div>
+					<section>
+					
+					
+					<ul class="icons">
+						<li><span class="label">Share Our App</span></li>
+												
+						<li><a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbuild.phonegap.com%2fapps%2f2475796%2fbuilds" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="http://twitter.com/share?url=https%3a%2f%2fbuild.phonegap.com%2fapps%2f2475796%2fbuilds" class="icon fa-twitter"><span class="label">Snapchat</span></a></li>
+						<li><a href="https://plus.google.com/share?url=https%3a%2f%2fbuild.phonegap.com%2fapps%2f2475796%2fbuilds" class="icon fa-google"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:?subject=See%20Our%20Childhood%20Memories%20at%20ChildhoodGames%20App&amp;body=See%20Our%20Childhood%20Memories%20at%20ChildhoodGames%20App&amp; https%3a%2f%2fbuild.phonegap.com%2fapps%2f2475796%2fbuilds" class="icon fa-envelope"><span class="label">Mail</span></a></li>
+					</ul>
+					
+						<header class="major">
+							<h2>Write to Us</h2>
+						</header>
+						<p>Write to Us your Feedback and Sugession to Provide you better and Intresting Information</p>
+						<ul class="contact">
+							<li class="fa-envelope-o"><a>info@snopzer.com</a></li>
+							<li class="fa-phone">(720) 755 6743</li>
+							<li class="fa-home">Khairathabad, Hyderabad</li>
+						</ul>
+					</section>
+					
+					<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Snopzer. All rights reserved.</p>
+					</footer>
+					
+				</div>
 			</div>
-
+		</div>
+		
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/lib/angular/angular.min.js"></script>
-			<script src="assets/lib/angular/angular-ui-router.js"></script>
-			<script src="app/app.module.js"></script>
-			<script src="app/components/home/homeController.js"></script>
-			<script src="app/components/details/detailsController.js"></script>
-			<script type="text/javascript" src="cordova.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/lib/angular/angular.min.js"></script>
+		<script src="assets/lib/angular/angular-ui-router.js"></script>
+		<script src="app/app.module.js"></script>
+		<script src="app/components/home/homeController.js"></script>
+		<script src="app/components/details/detailsController.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
 	</body>
 </html>

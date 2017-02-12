@@ -6,11 +6,13 @@ MetaDiseaseApp.config(['$stateProvider', '$urlRouterProvider', function($statePr
 	.state('/', {
 		url: "/",
 		templateUrl: "app/components/home/homeView.html",
-		controller  : 'homeController'
 	})
 	.state('details', {
 		url: "/details/:id",
 		templateUrl: "app/components/details/detailsView.html",
-		controller  : 'detailsController'
+	})
+	.state('page', {
+		url: "/page",
+		templateUrl: "app/components/page/pageView.html",
 	})
 }]);

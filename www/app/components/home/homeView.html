@@ -19,7 +19,7 @@
 			</div>
 			<span class="image object">
 				<img src="images/pic10.jpg" alt="" />
-			</span>
+				</span>
 		</section>-->
 		
 		<!-- Section -->
@@ -64,9 +64,9 @@
 			<div class="posts">
 			
 				<article ng-repeat="game in games">
-					<a href="#" class="image"><img ng-src="images/games/{{game.image}}" alt="" /></a>
+					<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" alt="" /></a>
 					<h3>{{game.name}}</h3>
-					<p>{{game.description}}.</p>
+					<p>{{game.description | limitTo:100 }}</p>
 					<ul class="actions">
 						<li><a ui-sref="details({id:game.id})" class="button">More</a></li>
 					</ul>
