@@ -63,7 +63,7 @@
 		<section>
 			<div class="posts">
 			
-				<article ng-repeat="game in games">
+				<article ng-repeat="game in games| orderBy:'name'">
 					<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" alt="" /></a>
 					<h3>{{game.name}}</h3>
 					<p>{{game.description | limitTo:100 }}</p>

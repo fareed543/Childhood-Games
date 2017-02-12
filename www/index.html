@@ -41,7 +41,7 @@
 								<h2>Results</h2>
 							</header>
 							<div class="mini-posts">
-								<article ng-repeat="game in games | filter:query">
+								<article ng-repeat="game in games | filter:query | orderBy:'name'">
 									<a ui-sref="details({id:game.id})" class="image"><img ng-src="images/games/{{game.image}}" /></a>
 									<p>{{game.name}}</p>
 								</article>
@@ -53,7 +53,7 @@
 							<li>
 								<span class="opener">Games</span>
 								<ul>
-									<li ng-repeat="game in games"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
+									<li ng-repeat="game in games| orderBy:'name'"><a ui-sref="details({id:game.id})">{{game.name}}</a></li>
 								</ul>
 							</li>
 							<li><a ui-sref="page">Vision & Mission</a></li>
