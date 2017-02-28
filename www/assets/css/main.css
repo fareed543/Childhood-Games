@@ -1,11 +1,6 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 
-/*
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 /* Reset */
 
@@ -3481,6 +3476,7 @@
 		-ms-flex-shrink: 1;
 		flex-shrink: 1;
 		width: 100%;
+		z-index: 9;
 	}
 
 		#main > .inner {
@@ -3732,6 +3728,7 @@
 					overflow-y: auto;
 					position: absolute;
 					top: 0;
+					z-index: 10;
 				}
 
 					#sidebar > .inner:after {
