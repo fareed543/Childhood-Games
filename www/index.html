@@ -100,25 +100,31 @@
 		<script src="assets/js/main.js"></script>
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-		<script src="node_modules/cordova-plugin-local-notifications/www/local-notification.js"></script>
+		
 		<script src="app/app.module.js"></script>
 		<script src="app/components/home/homeController.js"></script>
 		<script src="app/components/details/detailsController.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
+		<script src="node_modules/cordova-plugin-local-notifications/www/local-notification.js"></script>
 		<script>
-		cordova.plugins.notification.local.schedule({
-			id: 1,
-			title: "Production Jour fixe",
-			text: "Duration 1m",
-			firstAt: monday_9_am,
-			every: "minute",
-			//sound: "file://sounds/reminder.mp3",
-			//icon: "http://icons.com/?cal_id=1",
-			data: { meetingId:"123#fg8" }
+		var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+		var date = new Date();
+
+		cordova.plugins.notification.local.hasPermission(function (granted) {
+			alert("check permissions");
+		});
+		cordova.plugins.notification.local.registerPermission(function (granted) {
+			alert("Ask permissions");
 		});
 
-		cordova.plugins.notification.local.on("click", function (notification) {
-			joinMeeting(notification.data.meetingId);
+		cordova.plugins.notification.local.schedule({
+			id: 1
+			title: "Message Title",
+			message: "Message Text",
+			firstAt: date,
+			every: 25,
+			sound: sound,
+			icon: "http://domain.com/icon.png"
 		});
 		</script>
 	</body>
